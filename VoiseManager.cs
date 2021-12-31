@@ -6,11 +6,13 @@ namespace Twister
 {
     public class VoiseManager
     {
-        SpeechSynthesizer _speechSynth { get; set; }
+       public  SpeechSynthesizer SpeechSynth { get; set; }
         public VoiseManager()
         {
-            _speechSynth = new SpeechSynthesizer();
-            _speechSynth.Volume = 100;
+            SpeechSynth = new SpeechSynthesizer();
+            SpeechSynth.Volume = 100;
+            SpeechSynth.Rate = -3;
+            SpeechSynth.SelectVoiceByHints(VoiceGender.Neutral, VoiceAge.Senior);
         }
     }
 }
