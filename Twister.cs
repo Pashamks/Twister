@@ -17,10 +17,10 @@ namespace Twister
             _bodyParts = new string[] { "Right foot", "Left foot", "Left hand", "Right hand" };
             _colors = new string[] { "Green", "Red", "Blue", "Yellow" };
         }
-        public string GetMove()
+        public (string, string) GetMove()
         {
             int index = rand.Next(4);
-            return $"Put your {_bodyParts[index]} on {_colors[index]}"; 
+            return ($"Put your {_bodyParts[index]} on {_colors[index]}", _colors[index]); 
         }
     }
 }

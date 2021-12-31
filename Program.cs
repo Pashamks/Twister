@@ -8,7 +8,7 @@ namespace Twister
     {
         static VoiseManager voiseManager;
         static Twister twister;
-        static string _currentMove;
+        static string _currentMove, _currentColor;
         static void Main(string[] args)
         {
             voiseManager = new VoiseManager();
@@ -32,10 +32,28 @@ namespace Twister
                 Thread.Sleep(1000);
                 for (int i = 1; i <= amount; i++)
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("The turn of player " + i.ToString());
                     voiseManager.SpeechSynth.Speak("The turn of player " + i.ToString());
                     Thread.Sleep(1000);
-                    _currentMove = twister.GetMove();
+                    var res = twister.GetMove();
+                    _currentMove = res.Item1;
+                    _currentColor = res.Item2;
+                    switch (_currentColor)
+                    {
+                        case "Red":
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            break;
+                        case "Green":
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            break;
+                        case "Blue":
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            break;
+                        case "Yellow":
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            break;
+                    }
                     Console.WriteLine(_currentMove);
                     voiseManager.SpeechSynth.Speak(_currentMove);
                     Thread.Sleep(1000);
