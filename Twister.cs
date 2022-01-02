@@ -14,13 +14,16 @@ namespace Twister
         public Twister()
         {
             rand = new Random();
-            _bodyParts = new string[] { "Right foot", "Left foot", "Left hand", "Right hand" };
-            _colors = new string[] { "Green", "Red", "Blue", "Yellow" };
+            _bodyParts = new string[] { "Right foot", "Left foot", "Left hand", "Right hand", "Right foot", "Left foot", "Left hand", "Right hand" };
+            _colors = new string[] { "Green", "Red", "Blue", "Yellow", "Green", "Red", "Blue", "Yellow" };
         }
         public (string, string) GetMove()
         {
-            int index = rand.Next(4);
-            return ($"Put your {_bodyParts[index]} on {_colors[index]}", _colors[index]); 
+            rand = new Random();
+            int index = rand.Next(8);
+            Random r_new = new Random();
+            int _body = r_new.Next(8);
+            return ($"Put your {_bodyParts[_body]} on {_colors[index]}", _colors[index]); 
         }
     }
 }

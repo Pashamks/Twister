@@ -11,7 +11,7 @@ namespace Twister
         {
             SpeechSynth = new SpeechSynthesizer();
             SpeechSynth.Volume = 100;
-            SpeechSynth.Rate = -3;
+            SpeechSynth.Rate = 0;
             SpeechSynth.SelectVoiceByHints(VoiceGender.Neutral, VoiceAge.Senior);
         }
     }

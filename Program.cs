@@ -57,11 +57,8 @@ namespace Twister
                     Console.WriteLine(_currentMove);
                     voiseManager.SpeechSynth.Speak(_currentMove);
                     Thread.Sleep(1000);
-                    voiseManager.SpeechSynth.Speak("I repeat. The turn of player" + i.ToString() + ". Your move is : ");
-                    voiseManager.SpeechSynth.Speak(_currentMove);
-                    Thread.Sleep(1000);
-                    voiseManager.SpeechSynth.Speak("You have 30 seconds!");
-                    Thread.Sleep(30000);
+                    voiseManager.SpeechSynth.Speak("You have 5 seconds!");
+                    Thread.Sleep(5000);
                     Console.Clear();
                 }
                 round++;
